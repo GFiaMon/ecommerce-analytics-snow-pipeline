@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: This table has basic information about an order
+
+    columns:
+      - name: order_id
+        description: This is a unique identifier for an order
+        tests:
+          - unique
+          - not_null
+
+      - name: CLIENT_ID
+        description: The client's id
+        tests:
+          - not_null

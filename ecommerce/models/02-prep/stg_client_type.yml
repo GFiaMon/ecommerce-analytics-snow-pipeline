@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_client_type
+    description: This table has basic information about a customer
+
+    columns:
+      - name: type_id
+        description: This is a unique identifier for a customer
+        tests:
+          - unique
+          - not_null
+
+      - name: type_name
+        description: The client's name
+        tests:
+          - not_null

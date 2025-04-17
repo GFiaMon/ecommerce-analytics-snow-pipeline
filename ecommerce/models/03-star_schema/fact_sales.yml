@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: This table has information about all sales
+
+    columns:
+      - name: sales_id
+        description: Surrogate Key for the sale
+        tests:
+          - unique
+          - not_null
+          
+      - name: client_id
+        description: Client surrogate key
+        tests:
+          - not_null
+
+      - name: product_id
+        description: Product surrogate key
+        tests:
+          - not_null
+
+      - name: date_id
+        description: Date surrogate key
+        tests:
+          - not_null
+      
+      - name: order_id
+        description: The order ID
+        tests:
+          - not_null
+
+      - name: order_product_id
+        description: The order product ID
+        tests:
+          - not_null
+       
+      - name: order_status
+        description: The status of the order
+        tests:
+          - not_null
+      
+      - name: quantity
+        description: How much of that product the client bought
+        tests:
+          - not_null
+
+      - name: payment_method
+        description: How the client has payed
+        tests:
+          - not_null
+
+      - name: unit_price
+        description: The unit price of the product
+        tests:
+          - not_null
+
+      - name: total_order_price
+        description: How much the entire order has cost
+        tests:
+          - not_null
+
+        

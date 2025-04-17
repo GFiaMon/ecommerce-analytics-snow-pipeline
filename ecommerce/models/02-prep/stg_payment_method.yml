@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_payment_method
+    description: This table has basic information about a payment method
+
+    columns:
+      - name: PAYMENT_ID
+        description: This is a unique identifier for a payment method
+        tests:
+          - unique
+          - not_null
+
+      - name: PAYMENT_METHOD
+        description: The payment method
+        tests:
+          - not_null
+          - unique
+          - accepted_values:
+              values: ['credit_card', 'coupon', 'bank_transfer', 'gift_card']

@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: dim_client
+    description: This table has basic information about a customer
+
+    columns:       
+      - name: client_id
+        description: This is a unique identifier for a customer
+        tests:
+          - not_null
+          - unique
+
+      - name: client_name
+        description: The client's name
+        tests:
+          - not_null
+
+      - name: type_name
+        description: The client's type
+        tests:
+          - not_null
+      
+      - name: status_name
+        description: The client's status
+        tests:
+          - not_null
+
+      - name: email
+        description: The client's email
+       
+      - name: phone_number
+        description: The client's phone_number
+        tests:
+          - not_null
+      
+      - name: address
+        description: The client's address
+        tests:
+          - not_null
+
+      - name: registration_date
+        description: The day the client was registrated
+        tests:
+          - not_null

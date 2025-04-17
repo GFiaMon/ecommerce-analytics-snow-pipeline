@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_order_product
+    description: This table has basic information about an order product
+
+    columns:
+      - name: ORDER_PRODUCT_ID
+        description: This is a unique identifier for an order product
+        tests:
+          - unique
+          - not_null
+
+      - name: ORDER_ID
+        description: The order id
+        tests:
+          # - unique  it is not unique and it does not pass the test
+          - not_null
+
+      - name: PRICE_UNIT
+        description: The unit price of the product
+        tests:
+          - not_null
+          # - assert_price_unit_range
+
+        # This did not work because it needs a library to be installed
+          # - dbt_utils.expression_is_true:
+          #     expression: '"PRICE_UNIT" > 1.00 AND "PRICE_UNIT" < 1000.00'

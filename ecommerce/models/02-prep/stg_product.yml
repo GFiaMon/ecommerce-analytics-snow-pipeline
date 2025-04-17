@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_product
+    description: This table has basic information about a product
+    columns:
+      - name: product_id
+        description: This is a unique identifier for a product
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: The product's name
+        tests:
+          - not_null
